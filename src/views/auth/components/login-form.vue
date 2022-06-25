@@ -40,7 +40,7 @@ import { defineComponent, reactive, ref } from 'vue'
 import { InputField } from '@/components'
 import AButton from '@/components/button/button.vue'
 import useVuelidate from '@vuelidate/core'
-import { required, email } from '@vuelidate/validators'
+import { required, email, helpers } from '@vuelidate/validators'
 
 export default defineComponent({
   name: 'LoginForm',
@@ -55,8 +55,11 @@ export default defineComponent({
       email: '',
     })
     const rules = {
-      password: { required },
-      email: { required, email },
+      password: { required: helpers.withMessage('Please enter the password', required) },
+      email: {
+        required: helpers.withMessage('Please enter the email', required),
+        email: helpers.withMessage('Please provide a valid email', email),
+      },
     }
 
     const loading = ref(false)
