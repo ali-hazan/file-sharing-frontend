@@ -1,6 +1,8 @@
 <template>
-  <file-icon />
-  <hr />
+  <div class="bg-white">
+    <file-icon />
+    <hr />
+  </div>
 </template>
 
 <script lang="ts">

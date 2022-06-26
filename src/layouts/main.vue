@@ -1,7 +1,7 @@
 <template>
   <div class="flex sm:flex-row min-h-screen">
     <side-bar class="basis-24 bg-black text-white hidden sm:flex" />
-    <div class="basis-auto w-full pb-20">
+    <div class="basis-auto w-full pb-20 sm:pb-0">
       <router-view />
     </div>
   </div>
