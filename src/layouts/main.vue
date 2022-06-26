@@ -1,12 +1,11 @@
 <template>
-  <div class="flex sm:flex-row min-h-full">
+  <div class="flex sm:flex-row min-h-screen">
     <side-bar class="basis-24 bg-black text-white hidden sm:flex" />
-
-    <div class="basis-auto w-full pb-[72px] sm:pb-0">
+    <div class="basis-auto w-full pb-20">
       <router-view />
     </div>
   </div>
-  <bottom-bar class="absolute sm:hidden bottom-0 w-full" />
+  <bottom-bar class="block sm:hidden fixed bottom-0 w-full" />
 </template>
 
 <script lang="ts">

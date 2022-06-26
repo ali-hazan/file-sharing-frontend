@@ -1,5 +1,5 @@
 <template>
-  <div class="py-4 flex-col justify-between min-h-screen">
+  <div class="py-4 flex-col justify-between">
     <ul>
       <li v-for="item in menu" :key="item.key">
         <menu-icon :label="item.label" :icon="item.icon" class="mb-8" />
