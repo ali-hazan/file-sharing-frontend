@@ -17,7 +17,14 @@
     </div>
     <div class="pb-4 border-b border-gray-300">
       <h3 class="text-gray-600 font-bold">Share With</h3>
-      <div></div>
+      <div class="flex flex-wrap py-2">
+        <image-check-box />
+        <image-check-box />
+        <image-check-box />
+        <image-check-box />
+        <image-check-box />
+        <image-check-box />
+      </div>
     </div>
     <div class="flex justify-between w-40 m-auto pt-4">
       <preview-btn icon="share-2" label="share" />
@@ -31,12 +38,14 @@
 import { defineComponent } from 'vue'
 import FileIcon from './file-icon.vue'
 import PreviewBtn from './button.vue'
+import ImageCheckBox from '@/components/input-fields/img-checkbox.vue'
 
 export default defineComponent({
   name: 'FilePreview',
   components: {
     FileIcon,
     PreviewBtn,
+    ImageCheckBox,
   },
   props: {},
 })
