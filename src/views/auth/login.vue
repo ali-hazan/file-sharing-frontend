@@ -1,5 +1,5 @@
 <template>
-  <navigation-bar />
+  <navigation-bar page="login" />
   <div class="h-4/5 flex justify-center items-center">
     <login-form />
   </div>
