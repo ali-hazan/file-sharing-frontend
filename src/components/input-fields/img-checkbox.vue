@@ -111,7 +111,7 @@ label {
   display: block;
   border-radius: 8px;
   position: relative;
-  width: 82px;
+  width: 64px;
   margin: 4px;
   cursor: pointer;
 }
@@ -134,8 +134,8 @@ label:before {
 }
 
 label img {
-  height: 64px;
-  width: 64px;
+  height: 48px;
+  width: 48px;
   transition-duration: 0.2s;
   transform-origin: 50% 50%;
 }

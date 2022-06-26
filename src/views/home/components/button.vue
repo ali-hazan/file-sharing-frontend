@@ -1,6 +1,9 @@
 <template>
   <a href="" class="block text-center hover:text-red-300 focus:text-red-500">
-    <vue-feather size="22" :type="icon" />
+    <div class="bg-black w-10 h-10 p-2 rounded-full hover:bg-gray-600">
+      <vue-feather size="22" stroke="white" :type="icon" />
+    </div>
+
     <div class="text-xs">
       {{ label }}
     </div>

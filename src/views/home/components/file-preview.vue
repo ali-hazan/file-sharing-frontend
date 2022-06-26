@@ -24,6 +24,8 @@
         <image-check-box />
         <image-check-box />
         <image-check-box />
+        <image-check-box />
+        <image-check-box />
       </div>
     </div>
     <div class="flex justify-between w-40 m-auto pt-4">
