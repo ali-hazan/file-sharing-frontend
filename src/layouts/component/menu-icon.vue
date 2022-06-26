@@ -1,5 +1,5 @@
 <template>
-  <a href="" class="block text-center hover:text-red-300 mb-8">
+  <a href="" class="block text-center hover:text-red-300">
     <vue-feather size="18" :type="icon" />
     <div class="text-xs">
       {{ label }}

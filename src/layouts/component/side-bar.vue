@@ -1,8 +1,8 @@
 <template>
-  <div class="py-4 flex flex-col justify-between">
+  <div class="py-4 flex-col justify-between min-h-screen">
     <ul>
       <li v-for="item in menu" :key="item.key">
-        <menu-icon :label="item.label" :icon="item.icon" />
+        <menu-icon :label="item.label" :icon="item.icon" class="mb-8" />
       </li>
     </ul>
     <div class="h-28 text-center rounded-lg py-4 bg-white mx-4">
