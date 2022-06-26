@@ -22,6 +22,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import MenuIcon from './menu-icon.vue'
+import menu from './menu'
 
 export default defineComponent({
   name: 'SideBar',
@@ -29,12 +30,6 @@ export default defineComponent({
     MenuIcon,
   },
   setup() {
-    const menu = [
-      { key: 1, label: 'Home', icon: 'home' },
-      { key: 2, label: 'Files', icon: 'file' },
-      { key: 3, label: 'Rescent', icon: 'clock' },
-      { key: 4, label: 'Settings', icon: 'settings' },
-    ]
     return {
       menu,
     }

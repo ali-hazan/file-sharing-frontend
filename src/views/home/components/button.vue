@@ -1,5 +1,5 @@
 <template>
-  <a href="" class="block text-center hover:text-red-300 focus:text-red-500 focus:bg-black">
+  <a href="" class="block text-center hover:text-red-300 focus:text-red-500">
     <vue-feather size="22" :type="icon" />
     <div class="text-xs">
       {{ label }}
@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'MenuIcon',
+  name: 'PreviewBtn',
   props: {
     label: { type: String, default: '' },
     icon: { type: String, default: 'home' },

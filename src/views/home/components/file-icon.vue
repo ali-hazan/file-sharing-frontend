@@ -1,5 +1,9 @@
 <template>
-  <img :src="require(`@/assets/images/file-type/${icon}.png`)" alt="" srcset="" />
+  <img
+    class="block m-auto w-28 my-10"
+    :src="require(`@/assets/images/file-type/${icon}.png`)"
+    alt="File"
+  />
 </template>
 
 <script lang="ts">
