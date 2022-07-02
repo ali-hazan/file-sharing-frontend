@@ -1,6 +1,7 @@
 <template>
-  <div class="flex">
-    <a class="btn btn-primary">Button</a>
+  <div class="flex flex-col justify-center items-center border-b border-gray-300 pb-8">
+    <img src="@/assets/images/file-type/avi.png" class="w-20" alt="Extension" />
+    <h7 class="pt-4">Lorem ipsum dolor sit amet.png</h7>
   </div>
 </template>
 

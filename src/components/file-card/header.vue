@@ -5,7 +5,7 @@
       <label tabindex="0" class="">
         <vue-feather type="more-vertical"></vue-feather>
       </label>
-      <ul tabindex="0" class="dropdown-content menu p-2 hover shadow rounded-box w-52">
+      <ul tabindex="0" class="dropdown-content menu p-2 hover shadow bg-white rounded-box w-52">
         <li><a>Item 1</a></li>
         <li><a>Item 2</a></li>
       </ul>

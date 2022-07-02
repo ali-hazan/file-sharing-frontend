@@ -1,7 +1,12 @@
 <template>
   <div class="grid md:grid-cols-3 lg:grid-cols-4 h-full">
     <div class="md:col-span-2 lg:col-span-3">
-      <file-card />
+      <div class="grid md:grid-cols-3 lg:grid-cols-4">
+        <file-card />
+        <file-card />
+        <file-card />
+        <file-card />
+      </div>
     </div>
     <file-preview class="hidden md:block md:col-span-1 lg:col-span-1" />
   </div>
