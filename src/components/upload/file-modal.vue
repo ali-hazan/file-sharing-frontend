@@ -72,7 +72,7 @@ export default defineComponent({
       sharewith: {},
     }
 
-    const users = ['Batman', 'Robin', 'Joker']
+    const users = ['Batman', 'Robin', 'Joker', 'ddd', 'werwe', 'werwerewr', 'werwer']
 
     const loading = ref(false)
     const v$ = useVuelidate(rules, state)

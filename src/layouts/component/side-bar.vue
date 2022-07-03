@@ -2,7 +2,9 @@
   <div class="py-4 flex-col justify-between">
     <ul>
       <li v-for="item in menu" :key="item.key">
-        <menu-icon v-if="item.key !== 3" :label="item.label" :icon="item.icon" class="mb-8" />
+        <a v-if="item.key !== 1" @click="$router.push({ name: item.router })">
+          <menu-icon :label="item.label" :icon="item.icon" class="mb-8" />
+        </a>
         <file-modal v-else>
           <menu-icon :label="item.label" :icon="item.icon" class="mb-8" />
         </file-modal>

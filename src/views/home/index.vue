@@ -11,20 +11,16 @@
         <file-modal />
       </div>
     </div>
-
-    <file-preview class="hidden md:block md:col-span-1 lg:col-span-1" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import FilePreview from './components/file-preview.vue'
 import { FileCard, FileModal } from '@/components'
 
 export default defineComponent({
   name: 'HomePage',
   components: {
-    FilePreview,
     FileCard,
     FileModal,
   },
