@@ -2,7 +2,10 @@
   <div class="py-4 flex-col justify-between">
     <ul>
       <li v-for="item in menu" :key="item.key">
-        <menu-icon :label="item.label" :icon="item.icon" class="mb-8" />
+        <menu-icon v-if="item.key !== 3" :label="item.label" :icon="item.icon" class="mb-8" />
+        <file-modal v-else>
+          <menu-icon :label="item.label" :icon="item.icon" class="mb-8" />
+        </file-modal>
       </li>
     </ul>
     <div class="h-28 text-center rounded-lg py-4 bg-white mx-4">
@@ -23,11 +26,13 @@
 import { defineComponent } from 'vue'
 import MenuIcon from './menu-icon.vue'
 import menu from './menu'
+import { FileModal } from '@/components'
 
 export default defineComponent({
   name: 'SideBar',
   components: {
     MenuIcon,
+    FileModal,
   },
   setup() {
     return {
