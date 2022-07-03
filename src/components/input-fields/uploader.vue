@@ -7,15 +7,25 @@
         type="file"
         class="hidden"
         :placeholder="placeholder"
+        @click="$event.target.value = ''"
         @change="onChange"
-        @blur="onBlur($event)"
       />
       <label
-        class="block outline-pink-500 border w-full p-5 bg-zinc-100 rounded-lg text-center"
+        class="relative block outline-pink-500 border w-full p-5 bg-zinc-100 rounded-lg text-center"
         :for="computedId"
       >
+        <label
+          v-if="modelValue"
+          class="btn btn-sm bg-gray-200 hover:bg-gray-300 absolute right-2 top-2"
+          @click="removeImg"
+          >✕</label
+        >
+        <img
+          id="output"
+          :src="require('@/assets/images/file-plus.svg')"
+          class="h-20 m-auto rounded-lg overflow-hidden"
+        />
         <span v-if="!modelValue">{{ label }}</span>
-        <img id="output" class="w-auto m-auto rounded-lg overflow-hidden" />
       </label>
       <div v-for="error of errors" :key="error?.$uid">
         <div class="text-left text-red-700 text-sm mt-1">{{ error?.$message }}</div>
@@ -25,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import useFormInput, { COMMON_INPUT_PROPS } from '../../composables/useFormInput'
 
 export default defineComponent({
@@ -51,28 +61,37 @@ export default defineComponent({
   emits: ['update:modelValue', 'change', 'blur', 'input'],
 
   setup(props, { emit }) {
-    const { input, computedId, onBlur, focus, blur } = useFormInput(props, emit)
+    const { input, computedId } = useFormInput(props, emit)
+
+    const imageUploader = ref('')
+
+    const removeImg = (evt) => {
+      var output = document.getElementById('output')
+      output.src = require('@/assets/images/file-plus.svg')
+      emit('change', undefined)
+      emit('update:modelValue', undefined)
+      evt.preventDefault()
+    }
 
     const onChange = (evt: Event) => {
       const value = evt?.target?.files[0]
-
-      var output = document.getElementById('output')
-      output.src = URL.createObjectURL(value)
-      output.onload = function () {
-        URL.revokeObjectURL(output.src) // free memory
+      if (value) {
+        var output = document.getElementById('output')
+        output.src = URL.createObjectURL(value)
+        output.onload = function () {
+          URL.revokeObjectURL(output.src) // free memory
+        }
+        emit('change', value)
+        emit('update:modelValue', value)
       }
-
-      emit('change', value)
-      emit('update:modelValue', value)
     }
 
     return {
       input,
       computedId,
+      imageUploader,
       onChange,
-      onBlur,
-      focus,
-      blur,
+      removeImg,
     }
   },
 })

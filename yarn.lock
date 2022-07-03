@@ -1359,6 +1359,11 @@
   "resolved" "https://registry.npmjs.org/@vue/shared/-/shared-3.2.37.tgz"
   "version" "3.2.37"
 
+"@vueform/multiselect@^2.4.2":
+  "integrity" "sha512-5VVk4Mwn4cva+MbBjAXaEunmGWLAp98PcI4okaT95qYCfBckn2N/9ws18O0OStVe8WskFFUj/kF0goH/Xc2aTw=="
+  "resolved" "https://registry.npmjs.org/@vueform/multiselect/-/multiselect-2.4.2.tgz"
+  "version" "2.4.2"
+
 "@vuelidate/core@^2.0.0-alpha.42":
   "integrity" "sha512-yLp5/5IkwNZP8214TqEuexlFLGoEZybEad2OZu/heOYPnERm6tgiWHZltc0USCuQ1JVZ2EJuPRHmqMl/G/N7tw=="
   "resolved" "https://registry.npmjs.org/@vuelidate/core/-/core-2.0.0-alpha.42.tgz"

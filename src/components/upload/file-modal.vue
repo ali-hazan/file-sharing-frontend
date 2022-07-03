@@ -3,8 +3,8 @@
     <slot></slot>
   </label>
   <input id="file-modal" type="checkbox" class="modal-toggle" />
-  <label for="file-modal" class="modal cursor-pointer">
-    <label class="modal-box relative bg-white text-black" for="">
+  <div for="file-modal" class="modal cursor-pointer">
+    <div class="modal-box relative bg-white text-black" for="">
       <label for="file-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
       <form @submit.prevent="onSubmit">
         <input-field
@@ -14,33 +14,36 @@
           type="text"
           @blur="v$.title.$touch"
         />
-        <text-area
-          v-model="state.desc"
-          :errors="v$.desc.$errors"
-          label="Description"
-          @blur="v$.desc.$touch"
-        />
+
         <file-input
           v-model="state.file"
           :errors="v$.file.$errors"
           label="Please choose the file"
           @blur="v$.file.$touch"
         />
+        <Multiselect v-model="state.sharewith" class="mx-6 mb-4" :options="users" mode="tags" />
+        <text-area
+          v-model="state.desc"
+          :errors="v$.desc.$errors"
+          label="Description"
+          @blur="v$.desc.$touch"
+        />
         <a-button
           label="Upload"
           type="submit"
           :loading="loading"
           loader-text="Authenticating..."
-          class="block m-auto my-5"
+          class="block ml-auto my-4"
         />
       </form>
-    </label>
-  </label>
+    </div>
+  </div>
 </template>
 ]
 <script lang="ts">
 import { defineComponent, reactive, ref } from 'vue'
 import { InputField, TextArea, FileInput } from '@/components'
+import Multiselect from '@vueform/multiselect'
 import AButton from '@/components/button/button.vue'
 import useVuelidate from '@vuelidate/core'
 import { required, helpers } from '@vuelidate/validators'
@@ -52,6 +55,7 @@ export default defineComponent({
     AButton,
     TextArea,
     FileInput,
+    Multiselect,
   },
 
   setup() {
@@ -59,12 +63,16 @@ export default defineComponent({
       file: undefined,
       title: '',
       desc: '',
+      sharewith: [],
     })
     const rules = {
       file: { required: helpers.withMessage('Please upload a file', required) },
       title: { required: helpers.withMessage('Please enter the title', required) },
       desc: {},
+      sharewith: {},
     }
+
+    const users = ['Batman', 'Robin', 'Joker']
 
     const loading = ref(false)
     const v$ = useVuelidate(rules, state)
@@ -79,6 +87,7 @@ export default defineComponent({
 
     return {
       state,
+      users,
       v$,
       loading,
       onSubmit,
@@ -86,3 +95,18 @@ export default defineComponent({
   },
 })
 </script>
+
+<style src="@vueform/multiselect/themes/default.css"></style>
+<style>
+.multiselect {
+  background: #f4f4f5 !important;
+  width: auto;
+  border: none;
+}
+.multiselect.is-active {
+  box-shadow: none;
+}
+.multiselect-tag {
+  background: #000;
+}
+</style>
